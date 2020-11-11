@@ -7,10 +7,13 @@ const dotEnv = require('dotenv');
 const resolvers = require('./resolvers');
 //Schema
 const typeDefs = require('./typeDefs');
-
+const { connection } = require('./database/util');
 dotEnv.config();
 
 const app = express();
+
+// db connectivity
+connection();
 
 //set cors
 app.use(cors());
